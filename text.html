@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<script type="text/javascript">
+			var pagesViewd= window.history.length;
+			document.write('Hi today you visited' + pagesViewd + 'pages' );
+			function myfunction() {
+				//alert(document.getElementById('change1').innerHTML);
+				//document.getElementById('change2').innerHTML = "Change the content inside";
+
+    			//alert(document.getElementById('textBox').value)
+    			//var win = window.open(" ","This is new window","width = 300 height = 300");
+    			//win.document.write('This is new box');
+
+    			var formSize = document.forms[0];
+    			console.log(formSize);
+    			var promt = prompt("Type the page you want to", formSize.elements.length);
+    			if(promt){
+    				window.history.forward();
+    			}else{
+    				alert ('operation failed...!!');
+    			}
+    			
+			}
+			function myfunction1() {
+				var confrm = confirm("Are you want to go back ?");
+				if(confrm){
+					window.history.back();
+				}else{
+					alert('No pagesss found..');
+				}
+			}
+			
+			function getBrowserInfo(){
+				var binfo = "<p>Browser Name :" + navigator.appName + "</p>";
+				binfo += "<p> Browser Version: " + navigator.appVersion + "</p>";
+				binfo += "<p> Browser Agent: " + navigator.userAgent + "</p>";
+
+				binfo += "<p> Location: " + window.location + "</p>";
+
+				binfo += "<p> Screen width: " + screen.width + screen.height + "</p>";
+
+				document.getElementById("change").innerHTML = binfo;
+			}
+		</script>
+	</head>
+	<body>
+		<p id ="change"> Hi this is roboooo</p>
+		<p id ="change1"> Hi this is robooo1</p>
+		<p id ="change2"> Hi this is robooo2</p>
+		<input type="text" id="textBox">
+		<button id="test" onclick="myfunction()">Click here</button>
+		<button id="test1" onclick="myfunction1()">Click here</button>
+		<form id="myForm">
+			Name : <input type="text" name="">
+			<section size="2">
+				<option>BMW</option>
+				<option>Benz</option>
+			</section>
+
+			<input type="checkbox" name="goods">
+		</form>
+		<br>
+
+		<button id="BrowseriInfor" onclick="getBrowserInfo()">Browser info</button>
+	</body>
+	</html>
